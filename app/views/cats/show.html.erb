@@ -1,7 +1,16 @@
 <h1><%= @cat.name %></h1>
 
-<h3>Age: <%= @cat.age %></h3>
-<h3>Color: <%= @cat.color %></h3>
-<h3>Sex: <%= @cat.sex %></h3>
+<table>
+    <tr>
+        <th>Age</th>
+        <th>Color</th>
+        <th>Sex</th>
+    </tr>
+    <tr>
+        <td><%= @cat.age %></td>
+        <td><%= @cat.color %></td>
+        <td><%= @cat.sex %></td>
+    </tr>
+</table>
 
 <p>Description: <%= @cat.description %></p>
