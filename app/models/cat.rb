@@ -1,5 +1,19 @@
+require 'action_view'
+
 class Cat < ApplicationRecord
+    include ActionView::Helpers::DateHelper
+
+    CAT_COLORS = ['Black', 'Brown', 'Gray', 'Orange', 'White'].freeze()
+    CAT_SEXES = ['M', 'F'].freeze()
+
+    validates :color, inclusion: CAT_COLORS # color must be included in CAT_COLORS
+    validates :sex, inclusion: CAT_SEXES # sex must be included in CAT_SEXES
+    validates :birth_date, :color, :name, :sex, presence: true
     
+    # Method that uses birth_date to calculate age
+    def age
+        time_ago_in_words(birth_date)
+    end
 end
 
 
