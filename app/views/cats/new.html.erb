@@ -1,0 +1,41 @@
+<h1>Add a Cat</h1>
+
+<form action="<%=cats_url%>" method="post">
+    <label for="name">Name</label>
+    <input id="name" type="text" name="cat[name]">
+    <br>
+
+    
+    <div>
+        <p>Sex</p>
+
+        <input type="radio" name="cat[sex]" value="F" id="newCat__sex--female">
+        <label for="newCat__sex--female">Female</label>
+        <br>
+
+        <input type="radio" name="cat[sex]" value="M" id="newCat__sex--male">
+        <label for="newCat__sex--male">Male</label>
+    </div>
+    <br>
+
+    <label for="color">Color</label>
+    <select id="color" name="cat[color]">
+        <option value="" selected>Select a color</option>
+
+        <% Cat::CAT_COLORS.each do |color|%>
+            <option value="<%=color%>"><%=color%></option>
+        <% end %>
+    </select>
+    <br>
+
+    <label for="birth_date">Birth Date</label>
+    <input id="birth_date" type="date" name="cat[birth_date]">
+    <br>
+
+    <label for"description">Description</label>
+    <textarea id="description" rows="4" cols="40" name="cat[description]" placeholder="Enter description about your new cat"></textarea>
+    <br>
+
+    <input type="submit" value="Add Cat">
+
+</form>
