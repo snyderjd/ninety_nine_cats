@@ -21,19 +21,27 @@ class CatsController < ApplicationController
 
     def create
         # create a new cat from params and save it to the database
+        @cat = Cat.new(cat_params)
+
+        if @cat.save
+            #redirect user to the cat
+            redirect_to cat_url(@cat)
+        else
+            #show user the new cat form
+            render :new
+        end
     end
 
-    # def create
-    #     @book = Book.new(book_params)
-    
-    #     if @book.save
-    #       # show user the book show page
-    #       redirect_to book_url(@book)
-    #     else
-    #       # show user the new book form
-    #       render :new
-    #     end
-    #   end
+    # finds the cat by id in params and renders the edit form
+    def edit
+        @cat = Cat.find_by(id: params[:id])
+        render :edit
+    end
+
+    # takes in the values from the edit form and updates the cat
+    def update
+
+    end
 
     private
 
