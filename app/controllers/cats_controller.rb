@@ -15,7 +15,7 @@ class CatsController < ApplicationController
     end
 
     def new
-        @cat = Cat.new
+        @cat = Cat.new # builds blank cat to send to the view
         render :new
     end
 
