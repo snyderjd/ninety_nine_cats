@@ -40,8 +40,24 @@ class CatsController < ApplicationController
 
     # takes in the values from the edit form and updates the cat
     def update
+        @cat = Cat.find_by(id: params[:id])
 
+        if @cat.update_attributes(cat_params)
+            redirect_to cat_url(@cat)
+        else
+            render :edit
+        end
     end
+
+    # def update
+    #     @book = Book.find_by(id: params[:id])
+    
+    #     if @book.update_attributes(book_params)
+    #       redirect_to book_url(@book)
+    #     else
+    #       render :edit
+    #     end
+    #   end
 
     private
 
