@@ -1,25 +1,14 @@
-require 'action_view'
+class CatRentalRequest < ApplicationRecord
 
-class Cat < ApplicationRecord
-    include ActionView::Helpers::DateHelper
+    STATUSES = ['PENDING', 'APPROVED', 'DENIED'].freeze()
 
-    CAT_COLORS = ['Black', 'Brown', 'Gray', 'Orange', 'White'].freeze()
-    CAT_SEXES = ['M', 'F'].freeze()
+    validates :cat_id, :start_date, :end_date, :status, presence: true
+    validates :status, inclusion: STATUSES #status must be included in STATUSES
 
-    validates :color, inclusion: CAT_COLORS # color must be included in CAT_COLORS
-    validates :sex, inclusion: CAT_SEXES # sex must be included in CAT_SEXES
-    validates :birth_date, :color, :name, :sex, presence: true
-    
-    has_many :cat_rental_requests,
-        dependent: :destroy
-
-    # Method that uses birth_date to calculate age
-    def age
-        time_ago_in_words(birth_date)
-    end
+    belongs_to :cat, foreign_key: :cat_id, class_name: 'Cat'
 end
 
-
+ 
 # class Artwork < ApplicationRecord
 #     validates :title, presence: true
 #     validates :image_url, presence: true, uniqueness: true
