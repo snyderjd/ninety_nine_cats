@@ -1,0 +1,29 @@
+<h1>Create a Cat Rental Request</h1>
+
+<form action="<%= cats_url %>" method="POST">
+    <%# cat_id %>
+    <label for="cat">Cat</label>
+    <select id="cat" name="cat_rental_request[cat_id]">
+        <option value="" selected>Select a Cat</option>
+        <%# iterate over all the cats and insert an option for each one %>
+    </select>
+    <br>
+
+
+
+    <label for="color">Color</label>
+    <select id="color" name="cat[color]">
+        <option value="" <%= cat.color ? "" : "selected"%>>Select a color</option>
+
+        <% Cat::CAT_COLORS.each do |color|%>
+            <option value="<%=color%>" <%= cat.color == color ? "selected" : ""%>><%=color%></option>
+        <% end %>
+    </select>
+    <br>
+
+    <%# start_date %>
+
+    <%# end_date %>
+
+</form>
+
