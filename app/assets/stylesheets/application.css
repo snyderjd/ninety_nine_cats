@@ -22,3 +22,20 @@
     padding: 5px;
     text-align: left;
   }
+
+  .cats__index--container,
+  .cats__show--container {
+    text-align: center;
+    width: 50%;
+    margin: auto;
+  }
+
+  .cats__index--heading,
+  .cats__show--heading {
+    text-align: center;
+  }
+
+  .cats__index--list,
+  .cats__show--inner-container {
+    display: inline-block;
+  }

@@ -1,12 +1,15 @@
-<h1>Cats<h1>
+<h1 class="cats__index--heading">Cats<h1>
 
-<ul>
-    <% @cats.each do |cat| %>
-        
-    <li> <%= link_to cat.name, cat_url(cat.id) %> </li>
-    <% end %>
-</ul>
+<div class="cats__index--container">
+    <ul class="cats__index--list">
+        <% @cats.each do |cat| %>
+            <li> <%= link_to cat.name, cat_url(cat.id) %> </li>
+        <% end %>
+    </ul>
 
-<%= button_to 'Add a Cat', new_cat_url, method: :get %>
+    <%= button_to 'Add a Cat', new_cat_url, method: :get %>
 
-<%= button_to 'New Rental Request', new_cat_rental_request_url, method: :get %>
+    <%= button_to 'New Rental Request', new_cat_rental_request_url, method: :get %>
+</div>
+
+
