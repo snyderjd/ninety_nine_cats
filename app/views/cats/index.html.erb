@@ -1,11 +1,12 @@
 <h1 class="cats__index--heading">Cats<h1>
 
 <div class="cats__index--container">
-    <ul class="cats__index--list">
+
+    <div class="cats__index--list">
         <% @cats.each do |cat| %>
-            <li> <%= link_to cat.name, cat_url(cat.id) %> </li>
+            <h3> <%= link_to cat.name, cat_url(cat.id) %> </h3>
         <% end %>
-    </ul>
+    </div>
 
     <%= button_to 'Add a Cat', new_cat_url, method: :get %>
 

@@ -24,18 +24,34 @@
   }
 
   .cats__index--container,
-  .cats__show--container {
+  .cats__show--container,
+  .cat-rental-request__new--container {
     text-align: center;
     width: 50%;
     margin: auto;
   }
 
   .cats__index--heading,
-  .cats__show--heading {
+  .cats__show--heading,
+  .cats__new--heading,
+  .cat-rental-request__new--heading {
     text-align: center;
   }
 
   .cats__index--list,
-  .cats__show--inner-container {
+  .cats__show--inner-container,
+  .cats__form--form {
     display: inline-block;
+  }
+
+  .cats__form--container {
+    text-align: left;
+    width: 25%;
+    margin: auto;
+  }
+
+  .cat-rental-request__new--form {
+    text-align: left;
+    width: 25%;
+    margin: auto;    
   }

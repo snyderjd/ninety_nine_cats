@@ -1,28 +1,31 @@
-<h1>Create a Cat Rental Request</h1>
+<h1 class="cat-rental-request__new--heading">Create a Cat Rental Request</h1>
 
-<form action="http://localhost:3000/cat_rental_requests" method="POST">
+<div class="cat-rental-request__new--container">
+    <form action="http://localhost:3000/cat_rental_requests" method="POST" class="cat-rental-request__new--form">
 
-    <label for="cat">Cat</label>
-    <select id="cat" name="cat_rental_request[cat_id]">
-        <option value="" selected>Select a Cat</option>
-        <% @cats.each do |cat|%>
-            <option value="<%=cat.id%>"><%=cat.name%></option>
-        <% end %>
-        <%# iterate over all the cats and insert an option for each one %>
-    </select>
-    <br>
+        <label for="cat">Cat</label>
+        <select id="cat" name="cat_rental_request[cat_id]">
+            <option value="" selected>Select a Cat</option>
+            <% @cats.each do |cat|%>
+                <option value="<%=cat.id%>"><%=cat.name%></option>
+            <% end %>
+            <%# iterate over all the cats and insert an option for each one %>
+        </select>
+        <br>
 
-    <%# start_date %>
-    <label for="start_date">Start Date</label>
-    <input id="start_date" type="date" name="cat_rental_request[start_date]">
-    <br>
+        <%# start_date %>
+        <label for="start_date">Start Date</label>
+        <input id="start_date" type="date" name="cat_rental_request[start_date]">
+        <br>
 
-    <%# end_date %>
-    <label for="end_date">End Date</label>
-    <input id="end_date" type="date" name="cat_rental_request[end_date]">
-    <br>
+        <%# end_date %>
+        <label for="end_date">End Date</label>
+        <input id="end_date" type="date" name="cat_rental_request[end_date]">
+        <br>
 
-    <input type="submit" value="Submit Rental Request">
+        <input type="submit" value="Submit Rental Request">
 
-</form>
+    </form>
+</div>
+
 
